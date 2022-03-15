@@ -5,12 +5,12 @@
 
   tasks:
     - name: Execute the script
-      ignore_errors: yes
-      cmd: ps aux
+      command: echo "ps aux"
       register: mypass
       
       #shell: echo "ps aux"
-      register: mypass
+      #register: mypass
+      
     - name: Print the script result
       debug:
         msg: "{{ mypass.stdout }}"
