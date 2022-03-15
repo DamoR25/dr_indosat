@@ -1,2 +1,28 @@
 ---
-host
+- name: execute script and get result back.
+  hosts: 192.168.0.100
+
+  tasks:
+    - name: Execute the script
+      shell: echo "ps aux"
+      register: mypass
+    - name: Print the script result
+      debug:
+        msg: "{{ mypass.stdout }}"
+        
+        
+        
+        
+        
+    #- name: To ping to Slack to send message
+     # slack:
+      #   token: T4W1S5P34/B02MEUC40E9/iBeMJQKNdwG67tu90pxlPXGZ
+       #  domain: hooks.slack.com
+        # channel: '#ansible_eca_test'
+         #msg: "{{mypass.stdout}}"    
+     # when: mypass.stdout | regex_search('breached')
+      
+    #- name: fail the play if file system is within threshold
+     # fail:
+      #  msg: "Play Failed - File system is within threshold"
+      #when: not mypass.stdout | regex_search('breached')
