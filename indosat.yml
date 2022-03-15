@@ -6,7 +6,7 @@
   tasks:
     - name: Execute the script
       ignore_errors: yes
-      echo: "ps aux"
+      ansible.builtin.command: ps aux
       register: mypass
       
       #shell: echo "ps aux"
