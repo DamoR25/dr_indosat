@@ -4,7 +4,7 @@
 
   tasks:
     - name: Execute the script
-      ignore_erroes: yes
+      ignore_errors: yes
       shell: "ps aux"
       #shell: echo "ps aux"
       register: mypass
