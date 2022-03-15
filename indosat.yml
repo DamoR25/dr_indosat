@@ -5,7 +5,7 @@
 
   tasks:
     - name: Execute the script
-      command: echo "ps aux"
+      command: ps aux
       register: mypass
       
       #shell: echo "ps aux"
