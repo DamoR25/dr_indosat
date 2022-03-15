@@ -1,7 +1,7 @@
 ---
 - name: execute script and get result back.
   hosts: 192.168.0.100
-  become: yes
+  #become: yes
 
   tasks:
     - name: Execute the script
