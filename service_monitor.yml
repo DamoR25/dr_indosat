@@ -1,1 +1,16 @@
-
+---
+- name: ssh/sssd service monitoring
+  hosts: all
+  tasks:
+    - name: checking sshd service status
+      command: systemctl status "{{ item }}"
+      with_items:
+      - firewalld
+      - httpd
+      - ssh
+      - sssd
+      register: result
+      ignore_errors: yes
+    - name: showing report
+      debug:
+      var: result
